@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>500 idées de contenu LinkedIn pour dirigeants B2B | Fabien Peduzzi</title>
+<meta name="description" content="500 templates LinkedIn testés sur les 40 dirigeants TPE et PME B2B accompagnés par Fabien Peduzzi avec son agence CopyLinker. Guide offert + bonus formation LinkedIn 3h+.">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1374605567900667');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1374605567900667&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #050810;
+    --surface: #0a1220;
+    --surface-2: #0f1a2e;
+    --border: rgba(148, 163, 184, 0.10);
+    --border-strong: rgba(148, 163, 184, 0.18);
+    --text: #f1f5f9;
+    --muted: rgba(241, 245, 249, 0.58);
+    --muted-soft: rgba(241, 245, 249, 0.38);
+    --linkedin: #0A66C2;
+    --linkedin-soft: #2563eb;
+    --linkedin-bright: #38bdf8;
+    --linkedin-glow: rgba(10, 102, 194, 0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* GRID BACKGROUND (Linear style) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+
+  /* AMBIENT GLOW from top-left */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: -200px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(10, 102, 194, 0.18), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* TOP BANNER */
+  .banner {
+    background: linear-gradient(90deg, var(--linkedin) 0%, var(--linkedin-soft) 100%);
+    padding: 14px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .banner-text {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+  }
+
+  .banner-text strong {
+    font-weight: 700;
+  }
+
+  .banner-sep {
+    display: inline-block;
+    margin: 0 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+
+  @media (max-width: 700px) {
+    .banner { padding: 12px 16px; }
+    .banner-text { font-size: 13px; }
+    .banner-sep { display: none; }
+  }
+
+  /* HERO */
+  .hero {
+    padding: 96px 0 80px;
+    position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 80px; }
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    background: rgba(148, 163, 184, 0.04);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 32px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--linkedin-bright);
+    box-shadow: 0 0 8px var(--linkedin-bright);
+  }
+
+  .pill-li {
+    width: 14px;
+    height: 14px;
+    fill: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .h1 {
+    font-size: clamp(40px, 6.5vw, 76px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(241, 245, 249, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .h1 .accent {
+    background: linear-gradient(135deg, var(--linkedin-bright) 0%, var(--linkedin) 50%, var(--linkedin-soft) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lead {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 40px;
+  }
+
+  .lead strong { color: var(--text); font-weight: 600; }
+
+  /* CTA FORM */
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 520px;
+  }
+
+  @media (min-width: 600px) {
+    .form-row { flex-direction: row; }
+  }
+
+  .input {
+    flex: 1;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: var(--linkedin);
+    box-shadow: 0 0 0 4px var(--linkedin-glow);
+  }
+
+  .input::placeholder { color: var(--muted-soft); }
+
+  .btn {
+    padding: 16px 28px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--linkedin) 0%, var(--linkedin-soft) 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 8px 24px var(--linkedin-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--linkedin-bright), var(--linkedin));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px var(--linkedin-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .btn:hover::before { opacity: 1; }
+
+  .btn span { position: relative; z-index: 1; }
+
+  .form-meta {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted-soft);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .form-meta span { color: #22c55e; }
+
+  /* BOOK STAGE */
+  .book-stage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 640px;
+  }
+
+  .book-stage::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(ellipse at 40% 40%, rgba(10, 102, 194, 0.5), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(80px);
+  }
+
+  .book-stage img {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    width: 110%;
+    height: auto;
+    filter: drop-shadow(40px 60px 70px rgba(0,0,0,0.8)) drop-shadow(-20px 0 100px rgba(10, 102, 194, 0.4));
+  }
+
+  /* BONUS CARD with BORDER BEAM */
+  .bonus-wrap {
+    padding: 80px 0;
+  }
+
+  .bonus-card {
+    position: relative;
+    border-radius: 6px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.5) 0%, rgba(148, 163, 184, 0.1) 50%, rgba(56, 189, 248, 0.4) 100%);
+    overflow: hidden;
+  }
+
+  .bonus-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--linkedin-bright) 25%, transparent 50%);
+    animation: rotate 6s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .bonus-inner {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+    border-radius: 4px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .bonus-inner { grid-template-columns: 1fr 1.2fr; }
+  }
+
+  @media (max-width: 700px) {
+    .bonus-inner { padding: 32px 24px; }
+  }
+
+  .bonus-mockup {
+    aspect-ratio: 4 / 3;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(10, 102, 194, 0.3), transparent 60%),
+      linear-gradient(135deg, #0a1220 0%, #050810 100%);
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bonus-mockup::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bonus-mockup-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px;
+  }
+
+  .bonus-mockup-label {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--linkedin-bright);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 20px;
+  }
+
+  .bonus-mockup-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .bonus-mockup-duration {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .bonus-content .pill {
+    margin-bottom: 24px;
+  }
+
+  .bonus-h {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+
+  .bonus-h .accent {
+    color: var(--linkedin-bright);
+  }
+
+  .bonus-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .bonus-desc strong { color: var(--text); }
+
+  .bonus-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* FEATURES */
+  .features {
+    padding: 80px 0;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--linkedin-bright);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .h2 {
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 60px;
+    max-width: 720px;
+  }
+
+  .h2 .accent {
+    color: var(--linkedin-bright);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 700px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1000px) {
+    .features-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .feature {
+    background: var(--surface);
+    padding: 36px 28px;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .feature:hover {
+    background: var(--surface-2);
+  }
+
+  .feature-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--linkedin-bright);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .feature h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+  }
+
+  .feature p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* WHO */
+  .who {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .who-quote {
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    max-width: 880px;
+    margin-bottom: 48px;
+  }
+
+  .who-quote .accent {
+    color: var(--linkedin-bright);
+  }
+
+  .who-list {
+    list-style: none;
+    max-width: 720px;
+  }
+
+  .who-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .who-check {
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    background: rgba(10, 102, 194, 0.12);
+    border: 1px solid rgba(10, 102, 194, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--linkedin-bright);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .who-item p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: rgba(241, 245, 249, 0.82);
+  }
+
+  /* FINAL CTA */
+  .final {
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(10, 102, 194, 0.18), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(40px);
+  }
+
+  .final > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .final .pill {
+    margin: 0 auto 28px;
+  }
+
+  .final h2 {
+    font-size: clamp(36px, 5.5vw, 72px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+
+  .final h2 .accent {
+    background: linear-gradient(135deg, var(--linkedin-bright), var(--linkedin));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .final p {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+
+  .final-form {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .final-form .form-row { margin: 0 auto; }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-soft);
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.3px;
+  }
+
+  .footer a {
+    color: var(--muted);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.2s;
+  }
+
+  .footer a:hover { color: var(--linkedin-bright); }
+
+  /* MOBILE */
+  @media (max-width: 700px) {
+    .container { padding: 0 20px; }
+    .hero { padding: 64px 0 56px; }
+    .bonus-wrap { padding: 56px 0; }
+    .features { padding: 56px 0; }
+    .who { padding: 56px 0; }
+    .final { padding: 80px 0; }
+    .book-stage { min-height: 360px; }
+    .book-stage img { max-width: 260px; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- TOP BANNER -->
+<div class="banner">
+  <p class="banner-text">
+    <strong>500 idées de contenu LinkedIn</strong>
+    <span class="banner-sep">·</span>
+    Issues des templates qu'on utilise chez CopyLinker depuis 2 ans pour nos clients dirigeants.
+  </p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div>
+        <div class="pill">
+          <svg class="pill-li" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Guide offert
+        </div>
+
+        <h1 class="h1">
+          <span class="accent">500 idées</span> de contenu LinkedIn pour dirigeants de TPE et PME B2B.
+        </h1>
+
+        <p class="lead">
+          <strong>Les vrais templates</strong> qu'utilisent au quotidien les 40 dirigeants B2B que j'accompagne avec mon agence CopyLinker. Triés par typologie, par angle, par intention. Tu choisis, tu écris, tu publies.
+        </p>
+
+        <form class="form-row" id="lead-top" action="REMPLACE_PAR_URL_SYSTEME_IO" method="POST">
+          <input type="email" name="email" class="input" placeholder="ton@email.fr" required>
+          <button type="submit" class="btn"><span>Recevoir le guide →</span></button>
+        </form>
+        <p class="form-meta"><span>●</span> Téléchargement immédiat · Aucun spam</p>
+      </div>
+
+      <div class="book-stage">
+        <img src="assets/couverture-v2-nobg.png" alt="500 idées de contenu LinkedIn pour dirigeants B2B" id="book-image">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BONUS CARD -->
+<section class="bonus-wrap">
+  <div class="container">
+    <div class="bonus-card">
+      <div class="bonus-inner">
+
+        <div class="bonus-mockup">
+          <div class="bonus-mockup-inner">
+            <div class="bonus-mockup-label">Bonus offert</div>
+            <div class="bonus-mockup-title">Formation<br>LinkedIn</div>
+            <div class="bonus-mockup-duration">3 h+ · Vidéo complète</div>
+          </div>
+        </div>
+
+        <div class="bonus-content">
+          <div class="pill">
+            <svg class="pill-li" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Inclus avec le guide
+          </div>
+          <h2 class="bonus-h">+3 h de <span class="accent">formation LinkedIn</span> en bonus.</h2>
+          <p class="bonus-desc">
+            Les <strong>fondamentaux LinkedIn</strong> à respecter, vus en profondeur : personal branding, optimisation du profil, stratégie de contenu. Une partie du système que j'utilise au quotidien avec mes clients chez CopyLinker.
+          </p>
+
+          <div class="bonus-stats">
+            <div class="stat">
+              <span class="stat-num">3 h+</span>
+              <span class="stat-label">Durée</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Piliers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">0 €</span>
+              <span class="stat-label">Avec le guide</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES GRID -->
+<section class="features">
+  <div class="container">
+    <div class="section-eyebrow">// Au sommaire du guide</div>
+    <h2 class="h2">Tout ce que tu <span class="accent">trouveras</span> dans le guide.</h2>
+
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-num">01</div>
+        <h3>500 templates testés</h3>
+        <p>Compilés depuis les comptes LinkedIn des 40 dirigeants accompagnés avec CopyLinker.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">02</div>
+        <h3>Triés par typologie</h3>
+        <p>Storytelling, contre-intuitif, étude de cas, opinion clivante, mécanique virale.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">03</div>
+        <h3>Pensé pour TPE / PME B2B</h3>
+        <p>Adapté aux fondateurs et dirigeants de TPE et PME B2B qui veulent générer des leads.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-num">04</div>
+        <h3>Téléchargement direct</h3>
+        <p>Guide accessible en 1 clic, pas de nurturing 10 emails avant de l'avoir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="who">
+  <div class="container">
+    <div class="section-eyebrow">// Pour qui c'est</div>
+
+    <p class="who-quote">
+      Si tu diriges une TPE ou une PME B2B et que tu veux faire de LinkedIn <span class="accent">ton premier canal d'acquisition</span>, ce guide a été écrit pour toi.
+    </p>
+
+    <ul class="who-list">
+      <li class="who-item">
+        <div class="who-check">✓</div>
+        <p>Tu dois publier sur LinkedIn mais tu n'as plus d'idées qui te paraissent intéressantes.</p>
+      </li>
+      <li class="who-item">
+        <div class="who-check">✓</div>
+        <p>Tu publies déjà, mais tu tournes en rond sur 3-4 angles toujours les mêmes.</p>
+      </li>
+      <li class="who-item">
+        <div class="who-check">✓</div>
+        <p>Tu veux des idées qui parlent à des dirigeants, pas des conseils génériques copiés-collés.</p>
+      </li>
+      <li class="who-item">
+        <div class="who-check">✓</div>
+        <p>Tu veux gagner du temps : choisir un template, écrire, publier. Sans repartir de zéro.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container">
+    <div class="pill">
+      <svg class="pill-li" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Guide + Formation · 100 % offerts
+    </div>
+    <h2>Récupère le guide et la <span class="accent">formation LinkedIn.</span></h2>
+    <p>30 secondes pour t'inscrire. Guide dans ta boîte mail dans la foulée, formation juste derrière.</p>
+
+    <form class="final-form" id="lead-bottom" action="REMPLACE_PAR_URL_SYSTEME_IO" method="POST">
+      <div class="form-row">
+        <input type="email" name="email" class="input" placeholder="ton@email.fr" required>
+        <button type="submit" class="btn"><span>Je récupère tout →</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    © 2026 Fabien Peduzzi · CopyLinker ·
+    <a href="https://copylinker.fr/mentions-legales">Mentions légales</a>
+    <a href="https://copylinker.fr/politique-confidentialite">Confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  // Config
+  var THANK_YOU_URL = '/merci';
+  var SYSTEME_API_KEY = 'REMPLACE_PAR_API_KEY_SYSTEME_IO';
+  var SYSTEME_TAG_ID = 'REMPLACE_PAR_TAG_ID_SYSTEME_IO'; // ID du tag "lead_500_idees"
+
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var email = form.querySelector('input[type="email"]').value.trim();
+      if (!email) return;
+
+      var btn = form.querySelector('button[type="submit"]');
+      var originalText = btn.innerHTML;
+      btn.innerHTML = '<span>Envoi...</span>';
+      btn.disabled = true;
+
+      // 1. Fire Meta Pixel Lead event
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+      }
+
+      // 2. Post to Systeme.io API (création du contact)
+      try {
+        var resp = await fetch('https://api.systeme.io/api/contacts', {
+          method: 'POST',
+          headers: {
+            'X-API-Key': SYSTEME_API_KEY,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            locale: 'fr'
+          })
+        });
+
+        if (resp.ok || resp.status === 422) {
+          // 422 = contact existe déjà, on continue quand même
+          var contact = resp.ok ? await resp.json() : null;
+
+          // 3. Ajouter le tag (optionnel)
+          if (contact && contact.id && SYSTEME_TAG_ID && SYSTEME_TAG_ID.indexOf('REMPLACE') === -1) {
+            await fetch('https://api.systeme.io/api/contacts/' + contact.id + '/tags', {
+              method: 'POST',
+              headers: {
+                'X-API-Key': SYSTEME_API_KEY,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ tagId: parseInt(SYSTEME_TAG_ID) })
+            });
+          }
+        }
+      } catch (err) {
+        console.error('Systeme.io error:', err);
+        // Continue quand même vers thank-you (l'event Pixel a déjà fire)
+      }
+
+      // 4. Redirect vers thank-you (URL gérée par GA / Systeme.io aussi)
+      window.location.href = THANK_YOU_URL;
+    });
+  });
+</script>
+
+</body>
+</html>

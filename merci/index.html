@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci ! Ton guide est en route | Fabien Peduzzi</title>
+<meta name="description" content="Merci pour ton inscription. Ton guide 500 idées de contenu LinkedIn est en route + bonus formation.">
+<meta name="robots" content="noindex">
+
+<!-- Meta Pixel + Lead event (fired au chargement de la page thank-you) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1374605567900667');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+fbq('track', 'CompleteRegistration');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1374605567900667&ev=PageView&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1374605567900667&ev=Lead&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #050810;
+    --surface: #0a1220;
+    --surface-2: #0f1a2e;
+    --border: rgba(148, 163, 184, 0.10);
+    --border-strong: rgba(148, 163, 184, 0.18);
+    --text: #f1f5f9;
+    --muted: rgba(241, 245, 249, 0.58);
+    --muted-soft: rgba(241, 245, 249, 0.38);
+    --linkedin: #0A66C2;
+    --linkedin-soft: #2563eb;
+    --linkedin-bright: #38bdf8;
+    --linkedin-glow: rgba(10, 102, 194, 0.25);
+    --success: #22c55e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse 100% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 800px;
+    background: radial-gradient(ellipse, rgba(34, 197, 94, 0.15), rgba(10, 102, 194, 0.12), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* BANNER */
+  .banner {
+    background: linear-gradient(90deg, var(--linkedin) 0%, var(--linkedin-soft) 100%);
+    padding: 14px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .banner-text {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+  }
+
+  .banner-text strong { font-weight: 700; }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 56px;
+    text-align: center;
+  }
+
+  .check-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(34, 197, 94, 0.06));
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    position: relative;
+    box-shadow: 0 0 60px rgba(34, 197, 94, 0.2);
+  }
+
+  .check-circle svg {
+    width: 38px;
+    height: 38px;
+    fill: var(--success);
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 3px;
+    background: rgba(148, 163, 184, 0.04);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pill-li {
+    width: 14px;
+    height: 14px;
+    fill: #ffffff;
+    flex-shrink: 0;
+  }
+
+  .h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(241, 245, 249, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .h1 .accent {
+    background: linear-gradient(135deg, var(--linkedin-bright) 0%, var(--linkedin) 50%, var(--linkedin-soft) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+
+  .lead strong { color: var(--text); font-weight: 600; }
+
+  /* DOWNLOAD CARD */
+  .download-card {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    padding: 40px 36px;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(10, 102, 194, 0.15), transparent 50%);
+    pointer-events: none;
+  }
+
+  .download-card > * { position: relative; z-index: 1; }
+
+  .download-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--linkedin-bright);
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
+  .download-card h2 {
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .download-card p {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 36px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--linkedin) 0%, var(--linkedin-soft) 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 8px 24px var(--linkedin-glow), inset 0 1px 0 rgba(255,255,255,0.15);
+    text-decoration: none;
+    letter-spacing: 0.1px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px var(--linkedin-glow), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .btn-primary svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+  }
+
+  /* BONUS */
+  .bonus-section {
+    padding: 0 0 80px;
+  }
+
+  .bonus-card {
+    position: relative;
+    border-radius: 6px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.5) 0%, rgba(148, 163, 184, 0.1) 50%, rgba(56, 189, 248, 0.4) 100%);
+    overflow: hidden;
+  }
+
+  .bonus-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--linkedin-bright) 25%, transparent 50%);
+    animation: rotate 6s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .bonus-inner {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+    border-radius: 4px;
+    padding: 44px 40px;
+    text-align: center;
+  }
+
+  .bonus-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--linkedin-bright);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 20px;
+  }
+
+  .bonus-card h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px;
+  }
+
+  .bonus-card h2 .accent {
+    color: var(--linkedin-bright);
+  }
+
+  .bonus-card p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .bonus-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 28px 0 0;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .stat-num {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted-soft);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* NEXT STEP */
+  .next-step {
+    padding: 0 0 80px;
+    text-align: center;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--linkedin-bright);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .next-step h3 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .next-step p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    text-decoration: none;
+    letter-spacing: 0.1px;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--linkedin-bright);
+    background: rgba(56, 189, 248, 0.06);
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-soft);
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.3px;
+    margin-top: 40px;
+  }
+
+  .footer a {
+    color: var(--muted);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.2s;
+  }
+
+  .footer a:hover { color: var(--linkedin-bright); }
+
+  @media (max-width: 700px) {
+    .container { padding: 0 20px; }
+    .hero { padding: 56px 0 40px; }
+    .bonus-section { padding: 0 0 56px; }
+    .next-step { padding: 0 0 56px; }
+    .download-card { padding: 32px 24px; }
+    .bonus-inner { padding: 36px 24px; }
+    .bonus-stats { flex-direction: column; align-items: center; gap: 20px; }
+    .stat { text-align: center; }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- BANNER -->
+<div class="banner">
+  <p class="banner-text">
+    <strong>500 idées de contenu LinkedIn</strong> · Tu y as accès maintenant.
+  </p>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+    </div>
+
+    <div class="pill">
+      <svg class="pill-li" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Inscription confirmée
+    </div>
+
+    <h1 class="h1">
+      Merci ! Ton guide est <span class="accent">en route.</span>
+    </h1>
+
+    <p class="lead">
+      Le guide <strong>500 idées de contenu LinkedIn</strong> arrive dans ta boîte mail dans les 2 prochaines minutes. En attendant, tu peux le <strong>télécharger directement ici</strong>.
+    </p>
+
+  </div>
+</section>
+
+<!-- DOWNLOAD CARD -->
+<section style="padding-bottom: 80px;">
+  <div class="container">
+    <div class="download-card">
+      <div class="label">Téléchargement direct</div>
+      <h2>Récupère ton guide maintenant</h2>
+      <p>PDF complet, 500 templates LinkedIn classés par typologie. Accessible immédiatement, lisible sur tous tes devices.</p>
+      <a href="REMPLACE_PAR_URL_PDF" class="btn-primary" download>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Télécharger le guide
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus-section">
+  <div class="container">
+    <div class="bonus-card">
+      <div class="bonus-inner">
+
+        <span class="bonus-pill">✦ Bonus inclus</span>
+
+        <h2>Accède à ta <span class="accent">formation LinkedIn</span> de 3h+</h2>
+
+        <p>
+          Les fondamentaux LinkedIn à respecter, vus en profondeur : personal branding, optimisation du profil, stratégie de contenu. Une partie du système que j'utilise au quotidien avec mes clients chez CopyLinker.
+        </p>
+
+        <a href="https://copylinker.fr/formation-linkedin/" class="btn-primary">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+          Accéder à la formation
+        </a>
+
+        <div class="bonus-stats">
+          <div class="stat">
+            <span class="stat-num">3 h+</span>
+            <span class="stat-label">Durée</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Piliers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Vidéo</span>
+            <span class="stat-label">Format complet</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEP (audit RDV optionnel) -->
+<section class="next-step">
+  <div class="container">
+    <div class="section-eyebrow">// Pour aller plus loin</div>
+
+    <h3>Tu veux qu'on construise <strong>ta stratégie LinkedIn</strong> ensemble ?</h3>
+
+    <p>
+      Si tu diriges une TPE ou PME B2B et que tu veux faire de LinkedIn ton 1er canal d'acquisition, je peux t'aider avec mon agence CopyLinker. 30 minutes ensemble pour analyser ton compte et te livrer un plan concret.
+    </p>
+
+    <a href="https://taap.it/lguFZ0Q" class="btn-primary" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 1.99 2H20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Réserver un appel · 30 min
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    © 2026 Fabien Peduzzi · CopyLinker ·
+    <a href="https://copylinker.fr/mentions-legales">Mentions légales</a>
+    <a href="https://copylinker.fr/politique-confidentialite">Confidentialité</a>
+  </div>
+</footer>
+
+</body>
+</html>
