@@ -228,6 +228,20 @@ fbq('track', 'PageView');
     .form-row { flex-direction: row; }
   }
 
+  /* GRID FORM (multi-champs) */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 520px;
+  }
+
+  @media (min-width: 600px) {
+    .form-grid { grid-template-columns: 1fr 1fr; }
+    .form-grid .input-full,
+    .form-grid .btn { grid-column: span 2; }
+  }
+
   .input {
     flex: 1;
     padding: 16px 20px;
@@ -678,6 +692,7 @@ fbq('track', 'PageView');
   }
 
   .final-form .form-row { margin: 0 auto; }
+  .final-form .form-grid { margin: 0 auto; }
 
   /* FOOTER */
   .footer {
@@ -743,8 +758,11 @@ fbq('track', 'PageView');
           <strong>Les vrais templates</strong> qu'utilisent au quotidien les 40 dirigeants B2B que j'accompagne avec mon agence CopyLinker. Triés par typologie, par angle, par intention. Tu choisis, tu écris, tu publies.
         </p>
 
-        <form class="form-row" id="lead-top" action="REMPLACE_PAR_URL_SYSTEME_IO" method="POST">
-          <input type="email" name="email" class="input" placeholder="ton@email.fr" required>
+        <form class="form-grid" id="lead-top" action="REMPLACE_PAR_URL_SYSTEME_IO" method="POST">
+          <input type="text" name="first_name" class="input" placeholder="Prénom" autocomplete="given-name" required>
+          <input type="text" name="last_name" class="input" placeholder="Nom" autocomplete="family-name" required>
+          <input type="email" name="email" class="input input-full" placeholder="ton@email.fr" autocomplete="email" required>
+          <input type="tel" name="phone" class="input input-full" placeholder="06 00 00 00 00" autocomplete="tel" required>
           <button type="submit" class="btn"><span>Recevoir le guide →</span></button>
         </form>
         <p class="form-meta"><span>●</span> Téléchargement immédiat · Aucun spam</p>
@@ -875,8 +893,11 @@ fbq('track', 'PageView');
     <p>30 secondes pour t'inscrire. Guide dans ta boîte mail dans la foulée, formation juste derrière.</p>
 
     <form class="final-form" id="lead-bottom" action="REMPLACE_PAR_URL_SYSTEME_IO" method="POST">
-      <div class="form-row">
-        <input type="email" name="email" class="input" placeholder="ton@email.fr" required>
+      <div class="form-grid">
+        <input type="text" name="first_name" class="input" placeholder="Prénom" autocomplete="given-name" required>
+        <input type="text" name="last_name" class="input" placeholder="Nom" autocomplete="family-name" required>
+        <input type="email" name="email" class="input input-full" placeholder="ton@email.fr" autocomplete="email" required>
+        <input type="tel" name="phone" class="input input-full" placeholder="06 00 00 00 00" autocomplete="tel" required>
         <button type="submit" class="btn"><span>Je récupère tout →</span></button>
       </div>
     </form>
@@ -901,7 +922,14 @@ fbq('track', 'PageView');
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      var email = form.querySelector('input[type="email"]').value.trim();
+      var email = (form.querySelector('input[name="email"]') || {}).value;
+      var firstName = (form.querySelector('input[name="first_name"]') || {}).value;
+      var lastName = (form.querySelector('input[name="last_name"]') || {}).value;
+      var phone = (form.querySelector('input[name="phone"]') || {}).value;
+      email = email ? email.trim() : '';
+      firstName = firstName ? firstName.trim() : '';
+      lastName = lastName ? lastName.trim() : '';
+      phone = phone ? phone.trim() : '';
       if (!email) return;
 
       var btn = form.querySelector('button[type="submit"]');
@@ -914,7 +942,13 @@ fbq('track', 'PageView');
         fbq('track', 'Lead');
       }
 
-      // 2. Post to Systeme.io API (création du contact)
+      // 2. Construire les fields personnalisés systeme.io
+      var contactFields = [];
+      if (firstName) contactFields.push({ slug: 'first_name', value: firstName });
+      if (lastName) contactFields.push({ slug: 'surname', value: lastName });
+      if (phone) contactFields.push({ slug: 'phone_number', value: phone });
+
+      // 3. Post to Systeme.io API (création du contact)
       try {
         var resp = await fetch('https://api.systeme.io/api/contacts', {
           method: 'POST',
@@ -925,7 +959,8 @@ fbq('track', 'PageView');
           },
           body: JSON.stringify({
             email: email,
-            locale: 'fr'
+            locale: 'fr',
+            fields: contactFields
           })
         });
 
@@ -933,7 +968,7 @@ fbq('track', 'PageView');
           // 422 = contact existe déjà, on continue quand même
           var contact = resp.ok ? await resp.json() : null;
 
-          // 3. Ajouter le tag (optionnel)
+          // 4. Ajouter le tag (optionnel)
           if (contact && contact.id && SYSTEME_TAG_ID && SYSTEME_TAG_ID.indexOf('REMPLACE') === -1) {
             await fetch('https://api.systeme.io/api/contacts/' + contact.id + '/tags', {
               method: 'POST',
@@ -950,7 +985,7 @@ fbq('track', 'PageView');
         // Continue quand même vers thank-you (l'event Pixel a déjà fire)
       }
 
-      // 4. Redirect vers thank-you (URL gérée par GA / Systeme.io aussi)
+      // 5. Redirect vers thank-you
       window.location.href = THANK_YOU_URL;
     });
   });
