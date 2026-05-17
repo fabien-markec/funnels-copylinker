@@ -916,8 +916,8 @@ fbq('track', 'PageView');
 <script>
   // Config
   var THANK_YOU_URL = '/merci';
-  var SYSTEME_API_KEY = 'ddd494nix7syt2ogcdu4nhtrkw7m1hhmjdifqlltgobf4u0t490110p4635tel2b';
-  var SYSTEME_TAG_ID = '2007582'; // Tag "LM 500 idees"
+  // Worker Cloudflare qui proxy vers systeme.io (clé API cachée côté serveur)
+  var OPTIN_ENDPOINT = 'https://optin-copylinker.copylinker.workers.dev';
 
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', async function(e) {
@@ -942,50 +942,27 @@ fbq('track', 'PageView');
         fbq('track', 'Lead');
       }
 
-      // 2. Construire les fields personnalisés systeme.io
-      var contactFields = [];
-      if (firstName) contactFields.push({ slug: 'first_name', value: firstName });
-      if (lastName) contactFields.push({ slug: 'surname', value: lastName });
-      if (phone) contactFields.push({ slug: 'phone_number', value: phone });
-
-      // 3. Post to Systeme.io API (création du contact)
+      // 2. POST vers le Worker Cloudflare (qui gère systeme.io côté serveur)
       try {
-        var resp = await fetch('https://api.systeme.io/api/contacts', {
+        await fetch(OPTIN_ENDPOINT, {
           method: 'POST',
           headers: {
-            'X-API-Key': SYSTEME_API_KEY,
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
           body: JSON.stringify({
             email: email,
-            locale: 'fr',
-            fields: contactFields
+            first_name: firstName,
+            last_name: lastName,
+            phone: phone
           })
         });
-
-        if (resp.ok || resp.status === 422) {
-          // 422 = contact existe déjà, on continue quand même
-          var contact = resp.ok ? await resp.json() : null;
-
-          // 4. Ajouter le tag (optionnel)
-          if (contact && contact.id && SYSTEME_TAG_ID && SYSTEME_TAG_ID.indexOf('REMPLACE') === -1) {
-            await fetch('https://api.systeme.io/api/contacts/' + contact.id + '/tags', {
-              method: 'POST',
-              headers: {
-                'X-API-Key': SYSTEME_API_KEY,
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ tagId: parseInt(SYSTEME_TAG_ID) })
-            });
-          }
-        }
       } catch (err) {
-        console.error('Systeme.io error:', err);
+        console.error('Opt-in error:', err);
         // Continue quand même vers thank-you (l'event Pixel a déjà fire)
       }
 
-      // 5. Redirect vers thank-you
+      // 3. Redirect vers thank-you
       window.location.href = THANK_YOU_URL;
     });
   });
